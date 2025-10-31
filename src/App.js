@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './App.css';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -47,15 +48,6 @@ function App() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            style={{
-              padding: '12px 14px',
-              borderRadius: '8px',
-              border: '1px solid #ccc',
-              outline: 'none',
-              transition: '0.2s',
-            }}
-            onFocus={(e) => (e.target.style.borderColor = '#667eea')}
-            onBlur={(e) => (e.target.style.borderColor = '#ccc')}
           />
           <input
             type="password"
@@ -63,15 +55,6 @@ function App() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={{
-              padding: '12px 14px',
-              borderRadius: '8px',
-              border: '1px solid #ccc',
-              outline: 'none',
-              transition: '0.2s',
-            }}
-            onFocus={(e) => (e.target.style.borderColor = '#667eea')}
-            onBlur={(e) => (e.target.style.borderColor = '#ccc')}
           />
           <button
             type="submit"

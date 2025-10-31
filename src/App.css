@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #667eea;
+}
