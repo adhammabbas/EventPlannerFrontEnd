@@ -20,7 +20,6 @@ function EventDetailsModal({
   const [collaborators, setCollaborators] = useState([]);
   const [loadingCollaborators, setLoadingCollaborators] = useState(false);
 
-  // Load attendees if organizer
   const loadAttendees = useCallback(async () => {
     setLoadingAttendees(true);
     try {

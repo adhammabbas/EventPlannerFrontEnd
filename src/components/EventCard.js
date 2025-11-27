@@ -32,7 +32,6 @@ function EventCard({ event, onEventClick, onDelete, userRole }) {
     });
   };
 
-  // Role badge text
   const roleText =
     userRole === 'organizer'
       ? 'Organizer'

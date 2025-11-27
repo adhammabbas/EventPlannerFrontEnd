@@ -24,7 +24,7 @@ function AuthForm({onSuccess}) {
       const payload = isLogin ? { email, password } : { email, password, name };
 
       const response = await axios.post(`${API_URL}${endpoint}`, payload, {
-        withCredentials: true, // crucial for sending/receiving HTTP-only cookie
+        withCredentials: true,
       });
 
       if (response.data.success) {

@@ -19,7 +19,6 @@ function Dashboard({ logout }) {
   });
   const { user, token } = useContext(AuthContext);
 
-  // Wrap loadEvents in useCallback so it won't change on every render
   const loadEvents = useCallback(async () => {
     if (!token) {
       setLoading(false);
@@ -197,7 +196,7 @@ function Dashboard({ logout }) {
             setSelectedEvent(null);
           }}
           isOrganizer={getUserRole(selectedEvent) === "organizer"}
-          userRole={getUserRole(selectedEvent)} // pass full role
+          userRole={getUserRole(selectedEvent)}
         />
       )}
     </div>
