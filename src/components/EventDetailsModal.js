@@ -285,7 +285,7 @@ function EventDetailsModal({
         )}
 
         {/* Attendee / Invitee Section */}
-        {!isOrganizer && userRole !== "none" && (
+        {!isOrganizer && (userRole === "invitee" || userRole ==="attendee") && (
           <div style={{ marginTop: "20px" }}>
             <h3>Your Response</h3>
             <div style={{ display: "flex", gap: "10px" }}>
