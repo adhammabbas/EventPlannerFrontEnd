@@ -15,8 +15,7 @@ function Dashboard({ logout }) {
   const [filters, setFilters] = useState({
     role: "all",
     q: "",
-    startDate: "",
-    endDate: "",
+    date: ""
   });
   const { user, token } = useContext(AuthContext);
 
@@ -31,8 +30,7 @@ function Dashboard({ logout }) {
       const params = new URLSearchParams();
       if (filters.role !== "all") params.append("role", filters.role);
       if (filters.q) params.append("q", filters.q);
-      if (filters.startDate) params.append("startDate", filters.startDate);
-      if (filters.endDate) params.append("endDate", filters.endDate);
+      if (filters.date) params.append("date", filters.date);
 
       const response = await axios.get(
         `${API_URL}/events?${params.toString()}`
@@ -132,7 +130,7 @@ function Dashboard({ logout }) {
             onChange={(e) => setFilters({ ...filters, role: e.target.value })}
             className="form-input"
           >
-            <option value="all">All Events</option>
+            <option value="all">All Roles</option>
             <option value="organizer">Organizing</option>
             <option value="attendee">Attending</option>
             <option value="invitee">Invited</option>
@@ -141,20 +139,11 @@ function Dashboard({ logout }) {
           </select>
           <input
             type="date"
-            value={filters.startDate}
+            value={filters.date}
             onChange={(e) =>
-              setFilters({ ...filters, startDate: e.target.value })
+              setFilters({ ...filters, date: e.target.value })
             }
-            placeholder="Start Date"
-            className="form-input"
-          />
-          <input
-            type="date"
-            value={filters.endDate}
-            onChange={(e) =>
-              setFilters({ ...filters, endDate: e.target.value })
-            }
-            placeholder="End Date"
+            placeholder="Date"
             className="form-input"
           />
         </div>
