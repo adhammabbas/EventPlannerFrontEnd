@@ -156,7 +156,6 @@ function EventDetailsModal({
   return (
     <div className="modal-overlay">
       <div className="modal-content event-details">
-        {/* Event Info */}
         <h2 style={{ marginBottom: "10px" }}>{event.title}</h2>
         <p style={{ color: "#666" }}>{event.description || "No description"}</p>
         <p style={{ color: "#888", fontSize: "14px" }}>
@@ -171,7 +170,6 @@ function EventDetailsModal({
           </p>
         )}
 
-        {/* Organizer Section */}
         {isOrganizer && (
           <>
             <div style={{ marginTop: "15px" }}>
@@ -233,7 +231,6 @@ function EventDetailsModal({
             <div style={{ marginTop: "25px" }}>
               <h3>Invite Collaborators</h3>
 
-              {/* Invite collaborators */}
               <form
                 onSubmit={handleInviteCollaborator}
                 style={{ display: "flex", gap: "10px" }}
@@ -255,7 +252,6 @@ function EventDetailsModal({
                 </button>
               </form>
 
-              {/* List collaborators */}
               <div style={{ marginTop: "12px" }}>
                 <h3>Collaborators</h3>
                 {loadingCollaborators ? (
@@ -284,7 +280,6 @@ function EventDetailsModal({
           </>
         )}
 
-        {/* Attendee / Invitee Section */}
         {!isOrganizer && (userRole === "invitee" || userRole ==="attendee") && (
           <div style={{ marginTop: "20px" }}>
             <h3>Your Response</h3>
@@ -319,7 +314,6 @@ function EventDetailsModal({
           </div>
         )}
 
-        {/* Collaborator Response Section */}
         {!isOrganizer && (userRole === "collaborator" || userRole === "collaborator-invitee") && (
           <div style={{ marginTop: "20px" }}>
             <h3>Your Response</h3>
@@ -347,7 +341,6 @@ function EventDetailsModal({
           </div>
         )}
 
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="btn-secondary"

@@ -15,7 +15,7 @@ function Dashboard({ logout }) {
   const [filters, setFilters] = useState({
     role: "all",
     q: "",
-    date: ""
+    date: "",
   });
   const { user, token } = useContext(AuthContext);
 
@@ -84,7 +84,7 @@ function Dashboard({ logout }) {
       (a) => a.user?._id === user?.id || a.user === user?.id
     );
 
-    if(collaborator) {
+    if (collaborator) {
       return "collaborator";
     }
     if (collaboratorInvitee) {
@@ -101,7 +101,6 @@ function Dashboard({ logout }) {
 
   return (
     <div className="dashboard">
-      {/* Header */}
       <div className="dashboard-header">
         <div>
           <h1 style={{ margin: 0, color: "#333" }}>EventPlanner</h1>
@@ -115,7 +114,6 @@ function Dashboard({ logout }) {
       </div>
 
       <div className="dashboard-content">
-        {/* Filters */}
         <div className="filters-container">
           <input
             type="text"
@@ -139,15 +137,12 @@ function Dashboard({ logout }) {
           <input
             type="date"
             value={filters.date}
-            onChange={(e) =>
-              setFilters({ ...filters, date: e.target.value })
-            }
+            onChange={(e) => setFilters({ ...filters, date: e.target.value })}
             placeholder="Date"
             className="form-input"
           />
         </div>
 
-        {/* Create Event Button */}
         <button
           onClick={() => setShowCreateModal(true)}
           className="btn-create-event"
@@ -155,7 +150,6 @@ function Dashboard({ logout }) {
           + Create New Event
         </button>
 
-        {/* Events Grid */}
         {loading ? (
           <p style={{ textAlign: "center", color: "#666" }}>
             Loading events...
@@ -179,7 +173,6 @@ function Dashboard({ logout }) {
         )}
       </div>
 
-      {/* Modals */}
       {showCreateModal && (
         <CreateEventModal
           onClose={() => setShowCreateModal(false)}
